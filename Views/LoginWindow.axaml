@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CloneLiteApp.ViewModels"
+        x:Class="CloneLiteApp.Views.LoginWindow"
+        x:DataType="vm:LoginWindowViewModel"
+        Title="CloneLite - Login"
+        Width="350" Height="250"
+        WindowStartupLocation="CenterScreen">
+
+    <Design.DataContext>
+        <vm:LoginWindowViewModel />
+    </Design.DataContext>
+
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Usuário:" />
+        <TextBox Text="{Binding Usuario}" PlaceholderText="Digite seu usuário" />
+
+        <TextBlock Text="Senha:" />
+        <TextBox Text="{Binding Senha}" PasswordChar="*" PlaceholderText="Digite sua senha" />
+
+        <Button Content="Logar" Command="{Binding LogarCommand}" HorizontalAlignment="Center" />
+
+        <TextBlock Text="{Binding MensagemErro}" Foreground="Red" TextWrapping="Wrap" />
+    </StackPanel>
+</Window>
