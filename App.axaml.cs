@@ -38,7 +38,12 @@ public partial class App : Application
         services.AddTransient<ProdutosCrud>();
 
         services.AddTransient<LoginWindowViewModel>();
+        services.AddTransient<ListarProdutosViewModel>();
+        services.AddTransient<CadastraProdutoViewModel>();
+        services.AddTransient<MainWindowViewModel>();
+
         services.AddTransient<LoginWindow>();
+        services.AddTransient<MainWindow>();
 
         var provider = services.BuildServiceProvider();
         

@@ -122,3 +122,4 @@
 /home/devi/Varejo/src/CloneLiteApp/obj/Debug/net10.0/CloneLiteApp.pdb
 /home/devi/Varejo/src/CloneLiteApp/obj/Debug/net10.0/CloneLiteApp.genruntimeconfig.cache
 /home/devi/Varejo/src/CloneLiteApp/obj/Debug/net10.0/ref/CloneLiteApp.dll
+/home/devi/Varejo/src/CloneLiteApp/obj/Debug/net10.0/CloneLiteApp.sourcelink.json

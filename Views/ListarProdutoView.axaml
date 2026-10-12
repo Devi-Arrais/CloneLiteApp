@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CloneLiteApp.ViewModels"
+             xmlns:models="using:CloneLiteApp.Models"
+             x:Class="CloneLiteApp.Views.ListarProdutosView"
+             x:DataType="vm:ListarProdutosViewModel">
+
+    <DockPanel Margin="15">
+        <TextBlock DockPanel.Dock="Top"
+                   Text="Produtos cadastrados"
+                   FontSize="20" FontWeight="Bold"
+                   Margin="0,0,0,10" />
+
+        <Button DockPanel.Dock="Top"
+                Content="Recarregar"
+                Command="{Binding CarregarCommand}"
+                HorizontalAlignment="Left"
+                Margin="0,0,0,10" />
+
+        <ListBox ItemsSource="{Binding Produtos}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="models:Produtos">
+                    <StackPanel Orientation="Horizontal" Spacing="10">
+                        <TextBlock Text="{Binding id}" Width="40" />
+                        <TextBlock Text="{Binding descricao}" Width="200" />
+                        <TextBlock Text="{Binding unidade_medida}" Width="50" />
+                        <TextBlock Text="{Binding preco_venda, StringFormat='R$ {0:N2}'}" Width="100" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

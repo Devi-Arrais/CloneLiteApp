@@ -18,3 +18,9 @@
 # Outros comuns em .NET
 project.lock.json
 *.nupkg
+bin/
+obj/
+*.user
+.vs/
+.idea/
+appsettings.Development.json

@@ -1,22 +1,33 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:CloneLiteApp.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="CloneLiteApp.Views.MainWindow"
-        x:DataType="vm:MainViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="CloneLiteApp">
+        x:DataType="vm:MainWindowViewModel"
+        Title="CloneLite"
+        Width="900" Height="600"
+        WindowStartupLocation="CenterScreen">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
-    </Design.DataContext>
+    <Grid ColumnDefinitions="200,*">
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+        <!-- Menu lateral -->
+        <Border Grid.Column="0" Background="#2E3440"  Padding="10">
+            <StackPanel Spacing="5">
+                <TextBlock Text="CloneLite"
+                        Foreground="White" FontSize="18" FontWeight="Bold"
+                        Margin="0,0,0,15" />
 
+                <Button Content="Produtos"
+                        Command="{Binding MostrarListaCommand}"
+                        HorizontalAlignment="Stretch" />
+
+                <Button Content="Cadastrar Produto"
+                        Command="{Binding MostrarCadastroCommand}"
+                        HorizontalAlignment="Stretch" />
+            </StackPanel>
+        </Border>
+
+        <!-- Área de conteúdo, onde as Views são trocadas -->
+        <ContentControl Grid.Column="1"
+                        Content="{Binding CurrentView}" />
+    </Grid>
 </Window>

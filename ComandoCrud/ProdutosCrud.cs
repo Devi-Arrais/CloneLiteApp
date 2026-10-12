@@ -3,6 +3,7 @@ using CloneLiteApp.Data;
 using CloneLiteApp.Models;
 using System.Linq;
 using System.Collections.Generic;
+//using System.Data.Entity;
 
 namespace CloneLiteApp.ComandoCrud
 {
@@ -32,6 +33,15 @@ namespace CloneLiteApp.ComandoCrud
             .AsNoTracking()
             .Where(p => EF.Functions.ILike(p.descricao, $"%{nome}%"))
             .ToList();
+        }
+
+        public List<Produtos> Listar_Produtos()
+        {
+            using var db = _contextFactory.CreateDbContext();
+            return db.Produtos
+                    .AsNoTracking()
+                    .OrderBy(p => p.id)
+                    .ToList();
         }
     }
 }

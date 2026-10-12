@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CloneLiteApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ed5a69cfb4aa0ce62added4a41409cd52fda2d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("CloneLiteApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CloneLiteApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

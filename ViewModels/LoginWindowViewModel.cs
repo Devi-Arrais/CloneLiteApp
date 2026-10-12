@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CloneLiteApp.ComandoCrud;
+using System;
 
 namespace CloneLiteApp.ViewModels;
 
@@ -12,6 +13,7 @@ public partial class LoginWindowViewModel : ViewModelBase
     [ObservableProperty] private string _senha = string.Empty;
     [ObservableProperty] private string _mensagemErro = string.Empty;
 
+    public event Action? LoginSucesso;
     public LoginWindowViewModel(UserCrud userCrud)
     {
         _useCrud = userCrud;
@@ -35,6 +37,6 @@ public partial class LoginWindowViewModel : ViewModelBase
             MensagemErro = "Usuario ou Senha invalido";
             return;
         }
-        MensagemErro = "Login Bem Sucedido !!";
+        LoginSucesso?.Invoke();
     }
 }
