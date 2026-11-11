@@ -18,4 +18,13 @@ A migração do console para o Avalonia foi o ponto de virada: foi onde entendi 
 ![Tela de Login](docs/login.png)
 
 ### Lista de Produtos
-![Lista de Produtos](docs/listar_produto.png)
+![Lista de Produtos](docs/Listar_Produtos_Novo.png)
+
+### Cadastro de Produtos
+![Cadastro de Produtos](docs/Cadastro_Produtos.png)
+
+### Lista de Cliente
+![Lista de Clientes](docs/Listar_Clientes.png)
+
+### Cadastro de Cliente
+![Cadastro de cliente](docs/Cadastro_Clientes.png)
