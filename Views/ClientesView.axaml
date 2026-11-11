@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CloneLiteApp.ViewModels"
+             x:Class="CloneLiteApp.Views.ClientesView"
+             x:DataType="vm:ClientesViewModel">
+    <DockPanel>
+        <!-- Sub-menu da categoria -->
+        <Border DockPanel.Dock="Top"
+                Background="#F0F0F0" Padding="15,10">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <TextBlock Text="Clientes"
+                           FontSize="18" FontWeight="Bold"
+                           VerticalAlignment="Center" />
+                <Button Content="Listar" Command="{Binding MostrarListaCommand}" Background="#CB00006D" Foreground="White" />
+                <Button Content="Novo Cliente" Command="{Binding CadastroNovoCommand}" Background="#CB00006D" Foreground="White"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Sub-tela atual -->
+        <ContentControl Content="{Binding CurrentSubView}" />
+    </DockPanel>
+
+
+
+
+</UserControl>

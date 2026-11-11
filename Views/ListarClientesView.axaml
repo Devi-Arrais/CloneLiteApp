@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CloneLiteApp.ViewModels"
+             xmlns:models="using:CloneLiteApp.Models"
+             x:Class="CloneLiteApp.Views.ListarClientesView"
+             x:DataType="vm:ListarClientesViewModel">
+
+    <DockPanel Margin="15">
+        <StackPanel DockPanel.Dock="Top"
+                    Orientation="Horizontal" Spacing="10"
+                    Margin="0,0,0,10">
+            <TextBlock Text="Clientes cadastrados"
+                       FontSize="18" FontWeight="Bold"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+
+        <ListBox Name="ListaProdutosBox"
+                 ItemsSource="{Binding ListarCliente}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="models:Cliente">
+                    <Grid ColumnDefinitions="60,*,*,120,60" Margin="4">
+                        <TextBlock Grid.Column="0" Text="{Binding id}" />
+                        <TextBlock Grid.Column="1" Text="{Binding nome}" />
+                        <TextBlock Grid.Column="2"
+                                   Text="{Binding rua}" />
+                        <TextBlock Grid.Column="3"
+                                   Text="{Binding cidade}" />
+                        <TextBlock Grid.Column="4" Text="{Binding uf}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

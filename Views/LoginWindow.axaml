@@ -7,9 +7,6 @@
         Width="350" Height="250"
         WindowStartupLocation="CenterScreen">
 
-    <Design.DataContext>
-        <vm:LoginWindowViewModel />
-    </Design.DataContext>
 
     <StackPanel Margin="20" Spacing="10">
         <TextBlock Text="Usuário:" />

@@ -6,15 +6,20 @@
 
     <StackPanel Margin="15" Spacing="8" MaxWidth="450" HorizontalAlignment="Left">
 
+    <StackPanel>
         <TextBlock Text="Cadastrar produto"
-                   FontSize="20" FontWeight="Bold"
-                   Margin="0,0,0,10" />
+                FontSize="20" FontWeight="Bold"
+                IsVisible="{Binding !ModoEdicao}" />
+        <TextBlock Text="Editar produto"
+                FontSize="20" FontWeight="Bold"
+                IsVisible="{Binding ModoEdicao}" />
+    </StackPanel>
 
         <TextBlock Text="Descrição:" />
         <TextBox Text="{Binding Descricao}" />
 
         <TextBlock Text="Unidade de medida:" />
-        <ComboBox ItemsSource="{Binding unidade}"
+        <ComboBox ItemsSource="{Binding Unidades}"
                   SelectedItem="{Binding UnidadeSelecionada}" />
 
         <TextBlock Text="Código de barras (EAN-13):" />
@@ -30,11 +35,11 @@
         <NumericUpDown Value="{Binding PrecoVenda}" FormatString="0.00" />
 
         <TextBlock Text="Custo de compra:" />
-        <NumericUpDown Value="{Binding PrecoCompra}" FormatString="0.00" />
+        <NumericUpDown Value="{Binding CustoCompra}" FormatString="0.00" />
 
         <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
             <Button Content="Salvar" Command="{Binding SalvarCommand}" />
-            <Button Content="Limpar" Command="{Binding LimpaCommand}" />
+            <Button Content="Cancelar" Command="{Binding CancelarCommand}" />
         </StackPanel>
 
         <TextBlock Text="{Binding Mensagem}" Foreground="DarkGreen" TextWrapping="Wrap" />

@@ -8,9 +8,12 @@ namespace CloneLiteApp.Views;
 
 public partial class LoginWindow : Window
 {
-    private readonly IServiceProvider _serviceProvider;
+
+
+    private readonly IServiceProvider? _serviceProvider;
 
     public LoginWindow(LoginWindowViewModel viewModel, IServiceProvider serviceProvider)
+
     {
         InitializeComponent();
         DataContext = viewModel;
@@ -19,8 +22,13 @@ public partial class LoginWindow : Window
         viewModel.LoginSucesso += AbrirMainWindow;
     }
 
+        public LoginWindow()
+    {
+        InitializeComponent();
+    }
     private void AbrirMainWindow()
     {
+        if (_serviceProvider is null) return; 
         var mainWindow = _serviceProvider.GetRequiredService<MainWindow>();
         mainWindow.DataContext = _serviceProvider.GetRequiredService<MainWindowViewModel>();
         mainWindow.Show();

@@ -36,11 +36,19 @@ public partial class App : Application
 
         services.AddTransient<UserCrud>();
         services.AddTransient<ProdutosCrud>();
+        services.AddTransient<ClienteCrud>();
+        services.AddTransient<FormaPagamentoCrud>();
+        services.AddTransient<ItemVendaCrud>();
+        services.AddTransient<VendasCrud>();
 
         services.AddTransient<LoginWindowViewModel>();
         services.AddTransient<ListarProdutosViewModel>();
         services.AddTransient<CadastraProdutoViewModel>();
         services.AddTransient<MainWindowViewModel>();
+        services.AddTransient<CadastroClienteViewModel>();
+        services.AddTransient<ProdutosViewModel>();
+        services.AddTransient<ClientesViewModel>();
+        services.AddTransient<ListarClientesViewModel>();
 
         services.AddTransient<LoginWindow>();
         services.AddTransient<MainWindow>();

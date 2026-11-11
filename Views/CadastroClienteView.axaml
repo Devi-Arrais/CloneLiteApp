@@ -1,0 +1,77 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:CloneLiteApp.ViewModels"
+             x:Class="CloneLiteApp.Views.CadastroClienteView"
+             x:DataType="vm:CadastroClienteViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="15" Spacing="8" MaxWidth="500" HorizontalAlignment="Left">
+
+            <TextBlock Text="Cadastrar cliente"
+                       FontSize="20" FontWeight="Bold"
+                       Margin="0,0,0,10" />
+
+            <TextBlock Text="Nome: *" />
+            <TextBox Text="{Binding Nome}" />
+
+            <TextBlock Text="CPF:" />
+            <TextBox Text="{Binding Cpf}" PlaceholderText="000.000.000-00" />
+
+            <TextBlock Text="Data de nascimento:" />
+            <DatePicker SelectedDate="{Binding DataNascimento}" />
+
+            <TextBlock Text="E-mail:" />
+            <TextBox Text="{Binding Email}" />
+
+            <TextBlock Text="Celular: *" />
+            <TextBox Text="{Binding Celular}" PlaceholderText="(11) 99999-9999" />
+
+            <TextBlock Text="CEP:" />
+            <TextBox Text="{Binding Cep}" PlaceholderText="00000-000" />
+
+            <TextBlock Text="Rua:" />
+            <TextBox Text="{Binding Rua}" />
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                <StackPanel Grid.Column="0" Spacing="4">
+                    <TextBlock Text="Número:" />
+                    <TextBox Text="{Binding NumeroCasa}" PlaceholderText="123 ou S/N" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="4">
+                    <TextBlock Text="Complemento:" />
+                    <TextBox Text="{Binding Complemento}" PlaceholderText="Apto, bloco..." />
+                </StackPanel>
+            </Grid>
+
+            <TextBlock Text="Bairro:" />
+            <TextBox Text="{Binding Bairro}" />
+
+            <Grid ColumnDefinitions="*,80" ColumnSpacing="10">
+                <StackPanel Grid.Column="0" Spacing="4">
+                    <TextBlock Text="Cidade:" />
+                    <TextBox Text="{Binding Cidade}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Spacing="4">
+                    <TextBlock Text="UF:" />
+                    <TextBox Text="{Binding Uf}" MaxLength="2" />
+                </StackPanel>
+            </Grid>
+
+            <TextBlock Text="Observações:" />
+            <TextBox Text="{Binding Observacao}"
+                     AcceptsReturn="True"
+                     Height="60"
+                     TextWrapping="Wrap" />
+
+            <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
+                <Button Content="Salvar" Command="{Binding SalvarCommand}" />
+                <Button Content="Cancelar" Command="{Binding CancelarCommand}" />
+            </StackPanel>
+
+            <TextBlock Text="{Binding Mensagem}"
+                       Foreground="DarkGreen"
+                       TextWrapping="Wrap" />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -4,30 +4,39 @@
         x:Class="CloneLiteApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="CloneLite"
-        Width="900" Height="600"
+        Width="1000" Height="650"
         WindowStartupLocation="CenterScreen">
 
-    <Grid ColumnDefinitions="200,*">
 
-        <!-- Menu lateral -->
-        <Border Grid.Column="0" Background="#2E3440"  Padding="10">
+    <Window.Styles>
+        <!-- Estado de hover: mantém exatamente o mesmo fundo -->
+        <Style Selector="Button.SemEfeitoHover:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="TextBlock.Foreground" Value="White" />
+        </Style>
+    </Window.Styles>
+    <Grid ColumnDefinitions="180,*">
+
+        <Border Grid.Column="0" Background="#2E3440" Padding="10">
             <StackPanel Spacing="5">
                 <TextBlock Text="CloneLite"
-                        Foreground="White" FontSize="18" FontWeight="Bold"
-                        Margin="0,0,0,15" />
+                           Foreground="White" FontSize="18" FontWeight="Bold"
+                           Margin="0,0,0,15" />
 
                 <Button Content="Produtos"
-                        Command="{Binding MostrarListaCommand}"
-                        HorizontalAlignment="Stretch" />
+                        Classes="SemEfeitoHover"
+                        Command="{Binding AbrirProdutosCommand}"
+                        HorizontalAlignment="Stretch" Foreground="White" />
+                
+                <Button Content="Clientes"
+                        Classes="SemEfeitoHover"
+                        Command="{Binding ClienteCommand}"
+                        HorizontalAlignment="Stretch" Foreground="White" />
 
-                <Button Content="Cadastrar Produto"
-                        Command="{Binding MostrarCadastroCommand}"
-                        HorizontalAlignment="Stretch" />
+
             </StackPanel>
         </Border>
 
-        <!-- Área de conteúdo, onde as Views são trocadas -->
         <ContentControl Grid.Column="1"
-                        Content="{Binding CurrentView}" />
+                        Content="{Binding CurrentCategoria}" />
     </Grid>
 </Window>

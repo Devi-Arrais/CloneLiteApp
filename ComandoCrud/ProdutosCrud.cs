@@ -43,5 +43,23 @@ namespace CloneLiteApp.ComandoCrud
                     .OrderBy(p => p.id)
                     .ToList();
         }
+
+        public bool Atualizar(Produtos produto)
+        {
+            using var db = _contextFactory.CreateDbContext();
+            var existente = db.Produtos.FirstOrDefault(p => p.id == produto.id);
+            if (existente is null) return false;
+
+            existente.descricao = produto.descricao;
+            existente.unidade_medida = produto.unidade_medida;
+            existente.codigo_barras = produto.codigo_barras;
+            existente.referencia = produto.referencia;
+            existente.quantidade = produto.quantidade;
+            existente.preco_venda = produto.preco_venda;
+            existente.custo_compra = produto.custo_compra;
+
+            db.SaveChanges();
+            return true;
+        }
     }
 }
